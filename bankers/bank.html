@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 50px;
+      background-image: url('back.jpg'); /* Replace 'your-background-image.jpg' with your image path */
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    .input-group-lg input {
+      border-radius: 0;
+    }
+
+    #resources,
+    #table,
+    #inputsection,
+    #firs_alloc,
+    #operations,
+    #output1,
+    #output,
+    #output2 {
+      margin-top: 30px;
+    }
+
+    .btn-run {
+      font-size: 1.2rem;
+    }
+
+    .output-section {
+      margin-bottom: 100px;
+    }
+
+    table {
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    body {
+      padding: 50px;
+      background-color: #f8f9fa;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    .input-group-lg input {
+      border-radius: 0;
+    }
+
+    #resources,
+    #table,
+    #inputsection,
+    #firs_alloc,
+    #operations,
+    #output1,
+    #output,
+    #output2 {
+      margin-top: 30px;
+    }
+
+    .btn-run {
+      font-size: 1.2rem;
+    }
+
+    .output-section {
+      margin-bottom: 100px;
+    }
+  </style>
+
+  <!-- Favicons -->
+  <!--
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../../assets/img/favicons/site.webmanifest">
+  <link rel="mask-icon" href="../../assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../../assets/img/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="../../assets/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">  
+  -->
+ 
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="./../../assets/css/style.css" rel="stylesheet">
+
+  <!-- EXTRA LINKS -->
+
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- =======================================================
+  * Template Name: Vesperr - v4.7.0
+  * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <!-- SCRIPT FOR THE PAGE-->
+  <title>Banker's Algorithm</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<script src = "./algo.js"></script>
+
+
+<body>
+
+  <main id="main" class="container">
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="inner-page bg-light p-5">
+        <div>
+          <div style="display: flex; align-items: center;">
+            <!--<h1 style="flex: 1;">Banker's Algorithm</h1>-->
+            <img src="img.png" alt="Your Image" style="max-width: 200px,height:50px;" >
+          </div>
+        </div>
+     <br>
+     <hr>
+     <p>The banker’s algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources, then makes a "safe-state" check to test for possible activities, before deciding whether allocation should be allowed to continue.</p>
+     <hr>
+     <h2><strong> Logic behind the Banker's Algorithm </strong></h2>
+     <p>
+        Banker’s algorithm is named so because it is used in the banking system to check whether a loan can be sanctioned to a person or not. Suppose there are n number of account holders in a bank and the total sum of their money is S. If a person applies for a loan then the bank first subtracts the loan amount from the total money that the bank has and if the remaining amount is greater than S then only the loan is sanctioned. It is done because if all the account holders come to withdraw their money then the bank can easily do it.
+
+In other words, the bank would never allocate its money in such a way that it can no longer satisfy the needs of all its customers. The bank would try to be in a safe state always
+     </p> 
+     <hr>
+     <h3><strong>Algorithm</strong></h3>
+     <br>
+     <h6><i>Available</i></h6>
+     <ul>
+        <li>
+            It is a 1-d array of size ‘m’ indicating the number of available resources of each type.
+        </li>
+        <li>
+            Available[ j ] = k means there are ‘k’ instances of resource type Rj
+        </li>
+     </ul>
+     <h6><i>Max</i></h6>
+        <ul>
+           <li>
+            It is a 2-d array of size ‘n*m’ that defines the maximum demand of each process in a system
+           </li>
+           <li>
+            Max[ i, j ] = k means process Pi may request at most ‘k’ instances of resource type Rj.
+           </li>
+        </ul>
+        <h6><i>Allocation</i></h6>
+        <ul>
+           <li>
+            It is a 2-d array of size ‘n*m’ that defines the number of resources of each type currently allocated to each process.
+           </li>
+           <li>
+            Allocation[ i, j ] = k means process Pi is currently allocated ‘k’ instances of resource type Rj
+           </li>
+        </ul>
+        <h6><i>Need</i></h6>
+        <ul>
+           <li>
+            It is a 2-d array of size ‘n*m’ that indicates the remaining resource need of each process.
+           </li>
+           <li>
+            Need [ i,   j ] = k means process Pi currently needs ‘k’ instances of resource type Rj
+           </li>
+           <li>
+            Need [i,j] = Max [i, j] – Allocation [i, j]
+           </li>
+        </ul>
+        <h6><i>Safety Algorithm</i></h6>
+        <ul>
+            <li>
+                Let Work and Finish be vectors of length ‘m’ and ‘n’ respectively. 
+                Initialize: Work = Available 
+                Finish[i] = false; for i=1, 2, 3, 4….n
+            </li>
+            <li>
+                Find an i such that both 
+                <ol>
+                    <li>
+                        Finish[i] = false 
+                    </li>
+                    <li>
+                        Needi <= Work
+                    </li>
+                </ol> 
+                if no such i exists goto step (4)
+            </li>
+            <li>
+                Work = Work + Allocation[i] 
+                Finish[i] = true 
+                goto step (2)
+            </li>
+            <li>
+                if Finish [i] = true for all i 
+                then the system is in a safe state 
+            </li>
+        </ul>
+        <br>
+        <hr>
+        <br>
+        <h2>Live Simulation</h2>
+        <br>
+        <br>
+     <div class="input-group input-group-lg" style="max-width: 350px;">
+        <div class="input-group-prepend">
+          <span class="input-group-text" style = "background-color: rgb(0, 255, 255);">Number of Resources:</span>
+        </div>
+        <input id="totalres" type="text" class="form-control" onkeyup="addInitialRes()">
+      </div>
+      <div id="resources"></div>
+      <div id="table">
+        <div>
+          <div id="heading"></div>
+          <br>
+          <table id="tab" class="table table-striped table-bordered">
+            <thead id="inp-head"></thead>
+            <tbody id="ptable"></tbody>
+          </table>
+        </div>
+        <div>
+          <div id="heading_alloc"></div>
+          <br>
+          <table id="tab_alloc" class="table table-striped table-bordered">
+            <thead id="inp-head_alloc"></thead>
+            <tbody id="ptable_alloc"></tbody>
+          </table>
+        </div>
+      </div>
+      <br><br />
+      <div id="inputsection"></div>
+      <div id="firs_alloc"></div>
+      <div id="run" class="text-center">
+       <br>
+       <br>
+       <br> 
+        <button class="btn btn-outline-success btn-run" onclick="banker()">Run</button>
+        <br>
+        <br>
+        <br>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div id="operations"></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="output-section">
+        <div id="output1" class="text-center"></div>
+        <br>
+        <div id="output" class="text-center"></div>
+        <br>
+        <div id="output2" class="text-center"></div>
+        <br>
+      </div>
+    </section>
+  </main>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="./main.js"></script>
+
+</body>
+
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
