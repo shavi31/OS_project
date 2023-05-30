@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shared Memory Simulation</title>
+  <style>
+    /* CSS styles for the layout */
+    #reader, #writer {
+      margin-bottom: 10px;
+    }
+    #output {
+      height: 100px;
+      width: 300px;
+      border: 1px solid black;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h2>Shared Memory Simulation</h2>
+    <div id="reader">
+      <label for="reader-input">Reader:</label>
+      <input type="text" id="reader-input" />
+      <button onclick="readFromSharedMemory()">Read</button>
+    </div>
+    <div id="writer">
+      <label for="writer-input">Writer:</label>
+      <input type="text" id="writer-input" />
+      <button onclick="writeToSharedMemory()">Write</button>
+    </div>
+    <div id="output">
+      <h3>Shared Memory:</h3>
+      <ul id="shared-memory-list"></ul>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code for shared memory simulation
+    const sharedMemory = []; // Array to simulate shared memory
+
+    function writeToSharedMemory() {
+      const writerInput = document.getElementById("writer-input");
+      const data = writerInput.value;
+
+      // Add the data to shared memory
+      sharedMemory.push(data);
+
+      // Update the shared memory display
+      const sharedMemoryList = document.getElementById("shared-memory-list");
+      const listItem = document.createElement("li");
+      listItem.textContent = data;
+      sharedMemoryList.appendChild(listItem);
+
+      writerInput.value = ""; // Clear the input field
+    }
+
+    function readFromSharedMemory() {
+      const readerInput = document.getElementById("reader-input");
+      const index = parseInt(readerInput.value);
+
+      // Read data from shared memory based on the index
+      const data = sharedMemory[index];
+
+      // Display the read data
+      const output = document.getElementById("output");
+      output.textContent = data || "No data at the specified index.";
+
+      readerInput.value = ""; // Clear the input field
+    }
+  </script>
+</body>
+</html>

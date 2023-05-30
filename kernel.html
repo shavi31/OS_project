@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Message Passing Simulation</title>
+  <style>
+    #kernel {
+      width: 200px;
+      height: 200px;
+      background-color: gray;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px auto;
+    }
+
+    .node {
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: absolute;
+    }
+
+    .message {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      position: absolute;
+      transition: all 1s linear;
+    }
+  </style>
+</head>
+<body>
+  <div id="kernel"></div>
+
+  <script>
+    // Define the number of nodes
+    const numNodes = 5;
+
+    // Create nodes and append them to the document
+    for (let i = 0; i < numNodes; i++) {
+      const node = document.createElement('div');
+      node.className = 'node';
+      node.style.top = Math.floor(Math.random() * 200) + 'px';
+      node.style.left = Math.floor(Math.random() * 200) + 'px';
+      node.textContent = i + 1;
+      document.body.appendChild(node);
+    }
+
+    // Get references to the kernel and nodes
+    const kernel = document.getElementById('kernel');
+    const nodes = document.getElementsByClassName('node');
+
+    // Function to pass messages from source node to kernel and then to destination node
+    function passMessage(sourceNode, destNode) {
+      // Animate message from source node to kernel
+      const message = document.createElement('div');
+      message.className = 'message';
+      message.style.top = sourceNode.offsetTop + 'px';
+      message.style.left = sourceNode.offsetLeft + 'px';
+      document.body.appendChild(message);
+      setTimeout(() => {
+        message.style.top = kernel.offsetTop + 'px';
+        message.style.left = kernel.offsetLeft + 'px';
+        setTimeout(() => {
+          // Animate message from kernel to destination node
+          message.style.top = destNode.offsetTop + 'px';
+          message.style.left = destNode.offsetLeft + 'px';
+          setTimeout(() => {
+            document.body.removeChild(message);
+            console.log(`Message passed from Node ${sourceNode.textContent} to Node ${destNode.textContent}`);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    }
+
+    // Simulate message passing between nodes
+    setInterval(() => {
+      const sourceIndex = Math.floor(Math.random() * numNodes);
+      const destIndex = Math.floor(Math.random() * numNodes);
+
+      if (sourceIndex !== destIndex) {
+        const sourceNode = nodes[sourceIndex];
+        const destNode = nodes[destIndex];
+        passMessage(sourceNode, destNode);
+      }
+    }, 3000);
+  </script>
+</body>
+</html>
